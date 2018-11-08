@@ -1,6 +1,8 @@
 public class Validate{
   public static boolean validate(String n){
   
+    int sum = 0;
+    
     int[] cardNumber = new int[n.length()];
     
     for(int i = 0; i < n.length(); i++)
@@ -15,8 +17,6 @@ public class Validate{
         cardNumber[i] = working;
     }
       
-    int sum = 0;
-    
     for(int acc : cardNumber)
       sum += acc;
   
