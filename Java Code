@@ -1,0 +1,29 @@
+public class Validate{
+  public static boolean validate(String n){
+  
+    int[] cardNumber = new int[n.length()];
+    
+    for(int i = 0; i < n.length(); i++)
+      cardNumber[i] = Integer.parseInt(n.charAt(i) + "");
+      
+    for(int i = n.length() - 2; i >= 0; i -= 2){
+      int working = cardNumber[i] * 2;
+      
+      if(working > 9)
+        cardNumber[i] = working - 9;
+      else
+        cardNumber[i] = working;
+    }
+      
+    int sum = 0;
+    
+    for(int acc : cardNumber)
+      sum += acc;
+  
+    if(sum % 10 == 0)
+      return true;
+    return false;
+      
+    
+  }
+}
